@@ -10,8 +10,11 @@ export default function Header() {
   const session = data as AuthSession;
   const pathname = usePathname();
   const router = useRouter();
+  const callbackUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : "http://localhost:3000";
   const logout = () => {
-    signOut({ callbackUrl: "http://localhost:3000/login" });
+    signOut({ callbackUrl: `${callbackUrl}/login` });
   };
 
   return (

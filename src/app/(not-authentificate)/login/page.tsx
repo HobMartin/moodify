@@ -4,8 +4,11 @@ import { signIn } from "next-auth/react";
 import Image from "next/image";
 
 export default function Login() {
+  const callbackUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : "http://localhost:3000";
   const handleLogin = () => {
-    signIn("spotify", { callbackUrl: "http://localhost:3000" });
+    signIn("spotify", { callbackUrl });
   };
 
   return (
