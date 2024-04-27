@@ -8,7 +8,7 @@ export default function Login() {
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : "http://localhost:3000";
   const handleLogin = () => {
-    signIn("spotify", { callbackUrl });
+    signIn("spotify");
   };
 
   return (
