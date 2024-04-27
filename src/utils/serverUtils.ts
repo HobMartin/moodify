@@ -1,6 +1,6 @@
 "use server";
 
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { aggregateTopArtists } from "@/lib/spotify";
 import { AuthSession } from "@/types/types";
 import { SpotifyApi } from "@spotify/web-api-ts-sdk";
